@@ -15,6 +15,8 @@
 //   );
 // }
 
+import Hpbutton from "./hpbutton";
+
 const user = {
   name: "Cristiano Ronaldo",
   imgurl: "https://upload.wikimedia.org/wikipedia/commons/6/6a/Cristiano_Ronaldo_WC2022_-_02.jpg",
@@ -24,7 +26,8 @@ const user = {
 
 function AboutPage(){
   return(
-    <>
+    <div class="container">
+      <h1>INTRO</h1>
      <img 
        class="avatar"
        src={user.imgurl}
@@ -39,16 +42,15 @@ function AboutPage(){
       {user.name}
      </h1>
      
-
      <p>Hello there.<br/>How do you do?</p>
-    </>
+     <Hpbutton></Hpbutton>
+    </div>
   )
 }
 
 export default function App(){
   return(
     <>
-      <h1>INTRO</h1>
       <AboutPage/>
     </>
 
