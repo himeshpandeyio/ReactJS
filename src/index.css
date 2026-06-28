@@ -11,3 +11,13 @@
   padding-top: 5px;
   padding-bottom: 5px;
 } */
+.home{
+  background-color: #5468ff;
+}
+
+.movies-grid{
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  color: white;
+}
