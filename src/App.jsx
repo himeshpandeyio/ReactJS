@@ -1,17 +1,14 @@
 import MovieCard from "./components/MovieCard";
-import MovieBanner from "./components/MovieBanner";
 import SearchBar from "./components/SearchBar";
-import movie from "./components/data";
 
-function App (){
-
-    return (
-        <div className="container">
-            <MovieCard />
-            <MovieBanner />
-            <SearchBar />
-        </div>
-    )
+function App() {
+  return (
+    <div className="app">
+      <SearchBar />
+      <h1 className="h1">Top rated movies: </h1>
+      <MovieCard />
+    </div>
+  );
 }
 
 export default App;

@@ -15,4 +15,4 @@ function SearchBar() {
   );
 }
 
-export default SeacrchBar;
+export default SearchBar;

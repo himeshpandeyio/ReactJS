@@ -1,0 +1,20 @@
+.container{
+    display: flex;
+    align-items: center;
+
+}
+.card{
+    margin-left: 5px;
+    display: grid;
+}
+.images{
+    height: 40vh;
+    width: 20vh;
+}
+.app{
+    display: grid;
+    align-items: center;
+}
+.h1{
+    color: red;
+}
