@@ -1,20 +1,48 @@
-.container{
-    display: flex;
-    align-items: center;
-
+body,
+html {
+  min-height: 100vh;
+  background-color: rgb(68, 18, 18);
 }
-.card{
-    margin-left: 5px;
-    display: grid;
+.app {
+  display: grid;
+  align-items: center;
+  height: 100%;
+  width: 100%;
 }
-.images{
-    height: 40vh;
-    width: 20vh;
+.container {
+  display: flex;
+  align-items: center;
 }
-.app{
-    display: grid;
-    align-items: center;
+.card {
+  margin-left: 5px;
+  display: grid;
+  align-items: center;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 5px;
+  color:antiquewhite;
 }
-.h1{
-    color: red;
+.images {
+  height: 300px;
+  width: 200px;
+  border-color: white;
+  border-style: solid;
+}
+.h1 {
+  color:antiquewhite
+}
+.input {
+  border-color: yellow;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-style: solid;
+}
+.search-btn {
+  margin-left: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 25%;
+  border-color: yellow;
+  border-style: solid;
 }

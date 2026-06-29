@@ -3,14 +3,24 @@ import { useState } from "react";
 function SearchBar() {
   const [query, setQuery] = useState("");
 
+  function search(e) { 
+    alert(`Searching for ${query}`);
+    e.preventDefault();
+  }
+
   return (
     <div>
-      <input
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="...Search movies..."
-      />
-      <p>You typed: {query}</p>
+      <form>
+        <input
+          className="input"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="...Search movies..."
+        />
+        <button type="submit" onClick={search} className="search-btn">
+          Search
+        </button>
+      </form>
     </div>
   );
 }
