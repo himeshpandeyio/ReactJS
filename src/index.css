@@ -52,6 +52,44 @@ html {
   height: 100%;
   object-fit: cover;
 }
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    color:white;
+}
+
+.logo h2{
+    color: rgb(255, 240, 141);
+    cursor:pointer;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-size:18px;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#e50914;
+}
+
+.search-box input{
+    padding:8px 15px;
+    border:none;
+    border-radius:20px;
+    outline:none;
+    width:220px;
+}
+
 @media (max-width: 1024px) {
     .container {
         grid-template-columns: repeat(3, 1fr);
