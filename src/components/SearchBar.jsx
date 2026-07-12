@@ -1,7 +1,6 @@
 function SearchBar({ searchQuery, setSearchQuery }) {
   function search(e) {
     e.preventDefault();
-    alert(`Searching for ${searchQuery}`);
   }
 
   return (
