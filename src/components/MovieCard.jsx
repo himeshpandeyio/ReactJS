@@ -19,3 +19,4 @@ function MovieCard({ searchQuery }) {
 }
 
 export default MovieCard;
+
