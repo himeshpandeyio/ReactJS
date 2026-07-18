@@ -1,46 +1,58 @@
-import movie from "../data"; 
+import { useState } from "react";
+import MovieCard from "./components/MovieCard";
+import SearchBar from "./components/SearchBar";
+import Navbar from "./components/Navbar";
+import Favourite from "./components/Favourite";
+import { Routes, Route } from "react-router-dom";
+import movie from "./components/data"; 
 
-function MovieCard({ searchQuery, favourites, onToggleFavourite }) {
-  const filteredMovies = movie.filter((m) =>
-    m.title.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+function App() {
+  const [searchQuery, setSearchQuery] = useState("");
+  // Pre-populating with three movies from data
+  const [favourites, setFavourites] = useState([movie[0], movie[1], movie[6]]); 
+
+  const toggleFavourite = (movieItem) => {
+    if (favourites.some((fav) => fav.id === movieItem.id)) {
+      setFavourites(favourites.filter((fav) => fav.id !== movieItem.id));
+    } else {
+      setFavourites([...favourites, movieItem]);
+    }
+  };
 
   return (
-    <div className="container">
-      {filteredMovies.map((m) => {
-        const isFavourite = favourites.some((fav) => fav.id === m.id);
-
-        return (
-          <div className="card" key={m.id} style={{ position: "relative" }}>
-            <img className="images" src={m.poster} alt={m.title} />
-            
-            {/* Love Button Overlay */}
-            <button 
-              onClick={() => onToggleFavourite(m)}
-              className="love-btn"
-              style={{
-                position: "absolute",
-                top: "15px",
-                right: "25px",
-                background: "rgba(0, 0, 0, 0.6)",
-                border: "none",
-                borderRadius: "50%",
-                cursor: "pointer",
-                fontSize: "22px",
-                padding: "6px 9px",
-                transition: "transform 0.2s ease"
-              }}
-            >
-              {isFavourite ? "❤️" : "🤍"}
-            </button>
-
-            <h3>{m.title}</h3>
-            <span>⭐ {m.rating}</span>
-          </div>
-        );
-      })}
-    </div>
+    <main className="app">
+      <Navbar />
+      
+      <Routes>
+        {/* Main Home Route */}
+        <Route 
+          path="/" 
+          element={
+            <>
+              <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+              <h1 className="h1">Top rated movies:</h1>
+              <MovieCard 
+                searchQuery={searchQuery} 
+                favourites={favourites} 
+                onToggleFavourite={toggleFavourite} 
+              />
+            </>
+          } 
+        />
+        
+        {/* Favourites Route */}
+        <Route 
+          path="/favourites" 
+          element={
+            <Favourite 
+              favourites={favourites} 
+              onToggleFavourite={toggleFavourite} 
+            />
+          } 
+        />
+      </Routes>
+    </main>
   );
 }
 
-export default MovieCard;
+export default App;
