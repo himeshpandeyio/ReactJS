@@ -1,4 +1,4 @@
-import movie from "../data"; // updated path to match standard component folder structure
+import movie from "./data";
 
 function MovieCard({ searchQuery, favourites, onToggleFavourite }) {
   const filteredMovies = movie.filter((m) =>
@@ -8,32 +8,35 @@ function MovieCard({ searchQuery, favourites, onToggleFavourite }) {
   return (
     <div className="container">
       {filteredMovies.map((m) => {
+        // Check if this specific movie is already in the favourites array
         const isFavourite = favourites.some((fav) => fav.id === m.id);
 
         return (
-          <div className="card" key={m.id}>
-            <div className="poster-container" style={{ position: "relative" }}>
-              <img className="images" src={m.poster} alt={m.title} />
-              <button 
-                onClick={() => onToggleFavourite(m)}
-                className="fav-btn"
-                style={{
-                  position: "absolute",
-                  top: "10px",
-                  right: "10px",
-                  background: "rgba(0,0,0,0.6)",
-                  border: "none",
-                  borderRadius: "50%",
-                  cursor: "pointer",
-                  fontSize: "20px",
-                  padding: "5px 8px"
-                }}
-              >
-                {isFavourite ? "❤️" : "🤍"}
-              </button>
-            </div>
-            <h3>{m.title}</h3>
-            <span>⭐ {m.rating}</span>
+          <div className="card" key={m.id} style={{ position: "relative" }}>[cite: 3]
+            <img className="images" src={m.poster} alt={m.title} />[cite: 3]
+            
+            {/* Love Button Overlay */}
+            <button 
+              onClick={() => onToggleFavourite(m)}
+              className="love-btn"
+              style={{
+                position: "absolute",
+                top: "15px",
+                right: "25px",
+                background: "rgba(0, 0, 0, 0.6)",
+                border: "none",
+                borderRadius: "50%",
+                cursor: "pointer",
+                fontSize: "22px",
+                padding: "6px 9px",
+                transition: "transform 0.2s ease"
+              }}
+            >
+              {isFavourite ? "❤️" : "🤍"}
+            </button>
+
+            <h3>{m.title}</h3>[cite: 3]
+            <span>⭐ {m.rating}</span>[cite: 3]
           </div>
         );
       })}

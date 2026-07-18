@@ -13,27 +13,28 @@ function Favourite({ favourites, onToggleFavourite }) {
       <h1 className="h1">Your Favourite Movies:</h1>
       <div className="container">
         {favourites.map((m) => (
-          <div className="card" key={m.id}>
-            <div className="poster-container" style={{ position: "relative" }}>
-              <img className="images" src={m.poster} alt={m.title} />
-              <button 
-                onClick={() => onToggleFavourite(m)}
-                className="fav-btn"
-                style={{
-                  position: "absolute",
-                  top: "10px",
-                  right: "10px",
-                  background: "rgba(0,0,0,0.6)",
-                  border: "none",
-                  borderRadius: "50%",
-                  cursor: "pointer",
-                  fontSize: "20px",
-                  padding: "5px 8px"
-                }}
-              >
-                ❤️
-              </button>
-            </div>
+          <div className="card" key={m.id} style={{ position: "relative" }}>
+            <img className="images" src={m.poster} alt={m.title} />
+            
+            {/* Remove from Favourites Button */}
+            <button 
+              onClick={() => onToggleFavourite(m)}
+              className="love-btn"
+              style={{
+                position: "absolute",
+                top: "15px",
+                right: "25px",
+                background: "rgba(0, 0, 0, 0.6)",
+                border: "none",
+                borderRadius: "50%",
+                cursor: "pointer",
+                fontSize: "22px",
+                padding: "6px 9px"
+              }}
+            >
+              ❤️
+            </button>
+
             <h3>{m.title}</h3>
             <span>⭐ {m.rating}</span>
           </div>
