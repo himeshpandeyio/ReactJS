@@ -12,8 +12,8 @@ function MovieCard({ searchQuery, favourites, onToggleFavourite }) {
         const isFavourite = favourites.some((fav) => fav.id === m.id);
 
         return (
-          <div className="card" key={m.id} style={{ position: "relative" }}>[cite: 3]
-            <img className="images" src={m.poster} alt={m.title} />[cite: 3]
+          <div className="card" key={m.id} style={{ position: "relative" }}>
+            <img className="images" src={m.poster} alt={m.title} />
             
             {/* Love Button Overlay */}
             <button 
@@ -35,8 +35,8 @@ function MovieCard({ searchQuery, favourites, onToggleFavourite }) {
               {isFavourite ? "❤️" : "🤍"}
             </button>
 
-            <h3>{m.title}</h3>[cite: 3]
-            <span>⭐ {m.rating}</span>[cite: 3]
+            <h3>{m.title}</h3>
+            <span>⭐ {m.rating}</span>
           </div>
         );
       })}
