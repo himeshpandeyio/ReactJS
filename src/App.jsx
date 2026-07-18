@@ -2,6 +2,8 @@ import { useState } from "react";
 import MovieCard from "./components/MovieCard";
 import SearchBar from "./components/SearchBar";
 import Navbar from "./components/Navbar";
+import Favourite from "./components/Favourite";
+import {Routes,Route} from "react-router-dom";
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
