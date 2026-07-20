@@ -4,12 +4,10 @@ import SearchBar from "./components/SearchBar";
 import Navbar from "./components/Navbar";
 import Favourite from "./components/Favourite";
 import { Routes, Route } from "react-router-dom";
-import movie from "./components/data"; 
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
-  // Pre-populating with three movies from data
-  const [favourites, setFavourites] = useState([movie[0], movie[1], movie[6]]); 
+  const [favourites, setFavourites] = useState([]); 
 
   const toggleFavourite = (movieItem) => {
     if (favourites.some((fav) => fav.id === movieItem.id)) {
@@ -21,17 +19,51 @@ function App() {
 
   return (
     <main className="app">
-      <Navbar />
+      <Navbar />[cite: 6]
       
       <Routes>
-        {/* Main Home Route */}
+        {/* Home Route - Shows all content */}
         <Route 
           path="/" 
           element={
             <>
               <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-              <h1 className="h1">Top rated movies:</h1>
+              <h1 className="h1">Top rated:</h1>
               <MovieCard 
+                searchQuery={searchQuery} 
+                favourites={favourites} 
+                onToggleFavourite={toggleFavourite} 
+              />
+            </>
+          } 
+        />
+
+        {/* Movies Route */}
+        <Route 
+          path="/movies" 
+          element={
+            <>
+              <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+              <h1 className="h1">Movies:</h1>
+              <MovieCard 
+                type="movie"
+                searchQuery={searchQuery} 
+                favourites={favourites} 
+                onToggleFavourite={toggleFavourite} 
+              />
+            </>
+          } 
+        />
+
+        {/* Series Route */}
+        <Route 
+          path="/series" 
+          element={
+            <>
+              <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+              <h1 className="h1">TV Series:</h1>
+              <MovieCard 
+                type="series"
                 searchQuery={searchQuery} 
                 favourites={favourites} 
                 onToggleFavourite={toggleFavourite} 
@@ -45,8 +77,8 @@ function App() {
           path="/favourites" 
           element={
             <Favourite 
-              favourites={favourites} 
-              onToggleFavourite={toggleFavourite} 
+              favourites={favourites}
+              onToggleFavourite={toggleFavourite}
             />
           } 
         />
