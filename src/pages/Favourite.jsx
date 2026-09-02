@@ -1,3 +1,4 @@
+import "../css/Favourite.css";
 
 const Favourite = () => {
   return (

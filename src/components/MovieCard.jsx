@@ -1,3 +1,4 @@
+import "../css/MovieCard.css";
 
 const MovieCard = ({movie}) => {
 
@@ -7,7 +8,7 @@ const MovieCard = ({movie}) => {
   return (
     <div className="movie-card">
       <div className="movie-poster">
-        <image src={movie.poster} alt={movie.title} />
+        <img src={movie.poster} alt={movie.title} />
         <div className="movie-overlay">
           <button className="favourite-btn" onClick={onFavouriteClick}>♥</button>
         </div>

@@ -1,0 +1,26 @@
+/* Container for the empty state */
+.favourites-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #ffffff;
+}
+
+.favourites-empty h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #e50914; /* Matching the brand red accent */
+}
+
+.favourites-empty p {
+  font-size: 1.1rem;
+  color: #a0a0a0;
+  max-width: 400px;
+  line-height: 1.5;
+  margin: 0;
+}
