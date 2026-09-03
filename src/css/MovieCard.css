@@ -63,9 +63,9 @@
   opacity: 1; /* Shows overlay and heart button on hover */
 }
 
-.favourite-btn {
+.favorite-btn {
   background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px); /* Glassmorphism effect */
+  backdrop-filter: blur(4px);
   border: none;
   color: #ffffff;
   font-size: 1.2rem;
@@ -79,14 +79,19 @@
   transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
 }
 
-.favourite-btn:hover {
+.favorite-btn:hover {
   background: rgba(255, 255, 255, 0.9);
-  color: #ff4757; /* Heart turns red on hover */
+  color: #ff4757;
   transform: scale(1.1);
 }
 
-.favourite-btn:active {
+.favorite-btn:active {
   transform: scale(0.95);
+}
+
+.favorite-btn.active {
+  background: #ff4757;
+  color: #ffffff;
 }
 
 /* Movie Details Section */

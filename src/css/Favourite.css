@@ -24,3 +24,10 @@
   line-height: 1.5;
   margin: 0;
 }
+
+.favourites h2{
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #e50914; /* Matching the brand red accent */
+}
